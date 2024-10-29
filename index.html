@@ -7,62 +7,90 @@
     <title>Document</title>
 
     <style>
-        /* Set candy icon as the cursor */
+        /* General body styling for mobile responsiveness */
         body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #282c34;
+            color: white;
+            overflow: hidden; /* Prevent scrollbars on small screens */
             cursor: url('https://cdn-icons-png.flaticon.com/512/1387/1387575.png'), auto;
         }
 
-        /* Styling the snowflakes */
-        .snowflake {
-            position: fixed; /* Makes snowflakes fixed to the screen */
-            top: -10px; /* Start above the visible screen */
-            color: black; /* Snowflakes are white */
-            font-size: 1.5em; /* Adjust snowflake size */
-            animation: fall linear infinite; /* Apply falling animation */
+        /* Ensure content fits well on smaller screens */
+        h1, h2 {
+            margin: 10px 0;
+            padding: 5px;
         }
 
-        /* Define falling animation using keyframes */
+        a {
+            color: #61dafb;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Styling for snowflakes */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: white;
+            font-size: 1.5em;
+            animation: fall linear infinite;
+        }
+
+        /* Responsive design: smaller snowflakes for smaller screens */
+        @media (max-width: 768px) {
+            .snowflake {
+                font-size: 1em;
+            }
+        }
+
+        /* Animation for snowflake falling */
         @keyframes fall {
             to {
-                transform: translateY(100vh); /* Snowflake falls to the bottom of the viewport */
+                transform: translateY(100vh);
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- Blog heading -->
+    <!-- Main content -->
     <h1>Welcome to my blog</h1>
-
-    <!-- Subheading describing the weather -->
     <h2>Today is a rainy day</h2>
-
-    <!-- Link to another site -->
     <a href="https://techup.live">Check out past apps</a>
 
     <script>
-        // Function to create a snowflake element
+        // Function to create snowflake elements
         function createSnowflake() {
-            const snowflake = document.createElement('div'); // Create a <div> element
-            snowflake.classList.add('snowflake'); // Add 'snowflake' class to the element
-            snowflake.textContent = '❄'; // Set the snowflake emoji as content
-            snowflake.style.left = `${Math.random() * 100}vw`; // Set a random horizontal position
-            snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // Set a random fall duration
+            const snowflake = document.createElement('div'); // Create a new <div> element
+            snowflake.classList.add('snowflake'); // Add the 'snowflake' class
+            snowflake.textContent = '❄'; // Add snowflake emoji content
 
-            document.body.appendChild(snowflake); // Add the snowflake to the body
+            // Set random horizontal position and animation duration
+            snowflake.style.left = `${Math.random() * 100}vw`; 
+            snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
 
-            // Remove the snowflake after it leaves the screen
+            // Add snowflake to the document body
+            document.body.appendChild(snowflake);
+
+            // Remove snowflake after it falls out of view
             setTimeout(() => {
-                snowflake.remove(); // Remove the element from the DOM
-            }, 5000); // Wait 5 seconds before removing
+                snowflake.remove();
+            }, 5000);
         }
 
-        // Create a snowflake every 300 milliseconds
+        // Generate snowflakes at regular intervals
         setInterval(createSnowflake, 300);
 
-        // Set candy icon cursor on mouse move
-        document.body.addEventListener('mousemove', (e) => {
-            // Change the cursor to the candy icon
+        // Update the cursor to a candy icon when the mouse moves
+        document.body.addEventListener('mousemove', () => {
             document.body.style.cursor = `url('https://cdn-icons-png.flaticon.com/512/1387/1387575.png'), auto`;
         });
     </script>
