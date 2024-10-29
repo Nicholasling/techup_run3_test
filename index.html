@@ -1,99 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <style>
-        /* General body styling for mobile responsiveness */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #282c34;
-            color: white;
-            overflow: hidden; /* Prevent scrollbars on small screens */
-            cursor: url('https://cdn-icons-png.flaticon.com/512/1387/1387575.png'), auto;
-        }
-
-        /* Ensure content fits well on smaller screens */
-        h1, h2 {
-            margin: 10px 0;
-            padding: 5px;
-        }
-
-        a {
-            color: #61dafb;
-            text-decoration: none;
-            font-size: 1.2em;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Styling for snowflakes */
-        .snowflake {
-            position: fixed;
-            top: -10px;
-            color: white;
-            font-size: 1.5em;
-            animation: fall linear infinite;
-        }
-
-        /* Responsive design: smaller snowflakes for smaller screens */
-        @media (max-width: 768px) {
-            .snowflake {
-                font-size: 1em;
-            }
-        }
-
-        /* Animation for snowflake falling */
-        @keyframes fall {
-            to {
-                transform: translateY(100vh);
-            }
-        }
-    </style>
 </head>
-
 <body>
-    <!-- Main content -->
     <h1>Welcome to my blog</h1>
-    <h2>Today is a rainy day</h2>
-    <a href="https://techup.live">Check out past apps</a>
-
-    <script>
-        // Function to create snowflake elements
-        function createSnowflake() {
-            const snowflake = document.createElement('div'); // Create a new <div> element
-            snowflake.classList.add('snowflake'); // Add the 'snowflake' class
-            snowflake.textContent = '❄'; // Add snowflake emoji content
-
-            // Set random horizontal position and animation duration
-            snowflake.style.left = `${Math.random() * 100}vw`; 
-            snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
-
-            // Add snowflake to the document body
-            document.body.appendChild(snowflake);
-
-            // Remove snowflake after it falls out of view
-            setTimeout(() => {
-                snowflake.remove();
-            }, 5000);
-        }
-
-        // Generate snowflakes at regular intervals
-        setInterval(createSnowflake, 300);
-
-        // Update the cursor to a candy icon when the mouse moves
-        document.body.addEventListener('mousemove', () => {
-            document.body.style.cursor = `url('https://cdn-icons-png.flaticon.com/512/1387/1387575.png'), auto`;
-        });
-    </script>
+    <h3>Written by Preshant</h3>
 </body>
-
 </html>
