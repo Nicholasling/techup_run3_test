@@ -1,0 +1,59 @@
+/*
+h1 {
+    color: red;
+    background-color: yellow;
+    border: 10px black solid;
+    margin-bottom: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+*/
+
+h1 {
+    color: red;
+
+}
+
+/* 
+  Pseudo-classes allow you to style elements based on their state.
+  Here, we change the color of <a> elements when hovered over.
+*/
+h1:hover {
+    color: blue; /* Change link color when hovered */
+}
+
+/* 
+  Pseudo-elements allow you to style specific parts of an element.
+  ::before adds content before the element.
+*/
+h1::before {
+    content: "Welcome! "; /* Adds text before the <h1> content */
+}
+
+
+.title {
+    background-color: gray;
+}
+
+#important {
+    color: yellow;
+}
+
+/* 
+  Flexbox helps arrange elements in a row or column.
+  This container uses Flexbox to align items horizontally.
+*/
+.flex-container {
+    display: flex;
+    justify-content: space-around; /* Distributes space evenly */
+}
+
+/* 
+  Grid layout allows you to create complex designs.
+  This example creates a 2x2 grid layout.
+*/
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+    gap: 10px; /* Space between grid items */
+}

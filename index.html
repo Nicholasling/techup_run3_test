@@ -3,10 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Stopwatch Interface</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to my blog</h1>
-    <h3>Written by Preshant</h3>
+    <div class="stopwatch-container">
+        <!-- <div class="header">
+            <span class="time-display">2:44</span>
+            <span class="battery">36%</span>
+        </div> -->
+        <div class="timer">
+            <div class="time">00:00:00</div>
+            <div class="label">TIME</div>
+        </div>
+        <div class="pace">
+            <div class="pace-time">0:00</div>
+            <div class="label">AVG PACE /KM</div>
+        </div>
+        <div class="stats">
+            <div class="bar">
+                <div class="blue-bar"></div>
+                <span class="bar-time">0:00</span>
+            </div>
+            <div class="distance">
+                <span class="distance-value">0.00</span>
+                <div class="label">KILOMETERS</div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="toggle-button" class="stop-btn">▶️</button>
+            <button id="location-button" class="location-btn">📍</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- <h1>Welcome to my blog</h1>
+    <h3>Written by Preshant</h3> -->
+
+    <h1 class="title">Welcome to my blog</h1>
+    <!-- <h3 class="title">Written by Preshant</h3> -->
+
+    
+    <h3 class="title" id="important">Written by Nicholas</h3>
+    <h3>Date/ Time</h3>
+    <div class="datetime" id="datetime">Loading...</div>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const formattedDateTime = now.toLocaleString('en-SG', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false,  // 24-hour format
+                timeZone: 'Asia/Singapore'
+            });
+            document.getElementById('datetime').textContent = formattedDateTime;
+        }
+
+        // Update every second (1000 ms)
+        setInterval(updateDateTime, 1000);
+
+        // Initial call to display date/time immediately
+        updateDateTime();
+    </script>
+
+    <div class="flex-container">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+    </div>
+
+    <div class="grid-container">
+        <div>Grid Item 1</div>
+        <div>Grid Item 2</div>
+        <div>Grid Item 3</div>
+        <div>Grid Item 4</div>
+    </div>
+
+</body>
+</html>
+
+
+
